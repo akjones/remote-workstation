@@ -1,0 +1,38 @@
+- name: add key
+  become: yes
+  apt_key:
+    url: 'https://download.docker.com/linux/ubuntu/gpg'
+    state: present
+
+- name: add repo
+  become: yes
+  apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
+    state: present
+
+- name: install docker
+  become: yes
+  apt:
+    name: docker-ce
+    state: installed
+    update_cache: yes
+
+- name: install docker-compose
+  become: yes
+  copy:
+    src: docker-compose
+    dest: /usr/local/bin/docker-compose
+    mode: 0755
+
+- name: add docker group
+  become: yes
+  group:
+    name: docker
+    state: present
+
+- name: add ubuntu to docker group
+  become: yes
+  user:
+    name: ubuntu
+    groups: docker
+    append: yes
