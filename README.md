@@ -2,7 +2,7 @@
 
 ## Remote workstation in a box!
 
-Uses `xrdp` to enable login from windows.
+Uses `xrdp` to enable login from windows (but also works on Mac or Linux).
 
 Requires a ssh tunnel to work - password login is restricted to localhost.
 
