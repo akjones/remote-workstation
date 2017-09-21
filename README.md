@@ -22,7 +22,7 @@ Requires a ssh tunnel to work - password login is restricted to localhost.
 
         ssh -i <IdentityFile> -p <Port> ubuntu@<target> -o IdentitiesOnly=yes -L <PortToForward>:127.0.0.1:3389
 
--. Fire up your RDP client and connect to `localhost:<PortToForward>`. The username is `ubuntu` and the default password is `hello there`.
+-. Fire up your RDP client and connect to `localhost:<PortToForward>`. The username is `ubuntu` and the password is the one you created earlier.
 
 ### Local setup:
 
