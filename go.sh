@@ -14,4 +14,8 @@ else
     playbook=workstation.sh
 fi
 
-ansible-playbook -i "localhost," -c local $playbook
+if [ "${UBUNTU_PASSWORD}" != "" ]; then
+    extra_vars="--extra-vars ubuntu_password=${UBUNTU_PASSWORD}"
+fi
+
+ansible-playbook -i "localhost," -c local $playbook $extra_vars

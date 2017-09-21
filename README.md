@@ -12,7 +12,7 @@ Requires a ssh tunnel to work - password login is restricted to localhost.
 
 0. Create a new password 
 
-        python -c "import crypt; print crypt.crypt('my new password', 'my new salt)"
+        python -c "import crypt; print crypt.crypt('my new password', '$1$SomeSalt')"
 
 0. Run `UBUNTU_PASSWORD=<new_password> ./go.sh`
 
@@ -20,7 +20,7 @@ Requires a ssh tunnel to work - password login is restricted to localhost.
 
 0. Create a ssh tunnel
 
-        ssh -i <IdentityFile> -p <Port> ubuntu@<target> -o IdentitiesOnly=yes -L <PortToForward>:127.0.0.1:3389
+        ssh -i <private_key> -p <port> ubuntu@<target> -o IdentitiesOnly=yes -L <PortToForward>:127.0.0.1:3389
 
 0. Fire up your RDP client and connect to `localhost:<PortToForward>`. The username is `ubuntu` and the password is the one you created earlier.
 
