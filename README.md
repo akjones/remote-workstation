@@ -22,22 +22,22 @@ Requires a ssh tunnel to work - password login is restricted to localhost.
 
         ssh -i <IdentityFile> -p <Port> ubuntu@<target> -o IdentitiesOnly=yes -L <PortToForward>:127.0.0.1:3389
 
--. Fire up your RDP client and connect to `localhost:<PortToForward>`. The username is `ubuntu` and the password is the one you created earlier.
+0. Fire up your RDP client and connect to `localhost:<PortToForward>`. The username is `ubuntu` and the password is the one you created earlier.
 
 ### Local setup:
 
-1. Start the vagrant box:
+0. Start the vagrant box:
 
         vagrant up
 
-1. Get the vagrant details (take note of `Port` and `IdentityFile`):
+0. Get the vagrant details (take note of `Port` and `IdentityFile`):
 
         vagrant ssh-config
 
-1. Decide a `PortToForward` (e.g. 12345)
+0. Decide a `PortToForward` (e.g. 12345)
 
-1. Create the ssh tunnel
+0. Create the ssh tunnel
 
         ssh -i <IdentityFile> -p <Port> ubuntu@127.0.0.1 -o IdentitiesOnly=yes -L <PortToForward>:127.0.0.1:3389
 
-1. Fire up your RDP client and connect to `localhost:<PortToForward>`. The username is `ubuntu` and the default password is `hello there`.
+0. Fire up your RDP client and connect to `localhost:<PortToForward>`. The username is `ubuntu` and the default password is `hello there`.
