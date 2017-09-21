@@ -1,0 +1,26 @@
+- name: install desktop packages
+  apt:
+    name: "{{ item }}"
+    state: installed
+    update_cache: yes
+  become: yes
+  with_items:
+    - ubuntu-desktop
+    - xrdp
+    - xfce4-goodies 
+
+- name: home xsession file
+  copy:
+    src: xsession
+    dest: ~/.xsession
+
+- name: global xsession file
+  copy:
+    src: xsession
+    dest: /etc/skel/.xsession
+
+- name: restart xrdp service
+  service:
+    name: xrdp
+    enabled: yes
+    state: restarted

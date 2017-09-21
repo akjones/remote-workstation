@@ -1,0 +1,27 @@
+- name: install base packages
+  apt:
+    name: "{{ item }}"
+    state: installed
+    update_cache: yes
+  become: yes
+  with_items:
+    - bash-completion
+    - vim
+    - git
+    - git-core
+    - git-email
+    - git-extras
+    - curl
+    - jq
+    - wget
+    - htop
+    - ack-grep
+    - silversearcher-ag
+    - terminator
+    - unzip
+    - tar
+    - gzip
+    - bzip2
+    - build-essential
+    - gcc
+    - g++
