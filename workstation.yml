@@ -1,4 +1,4 @@
 - hosts: all
   roles:
     - base
-    - desktop
+    - { role: desktop, ubuntu_password: '{{ lookup("env", "UBUNTU_PASSWORD") }}' }
