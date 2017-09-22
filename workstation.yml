@@ -5,5 +5,5 @@
     - akjones.remote-desktop-role
     - docker
     - aws
-    - nodejs
     - { role: ocha.dotnet-core, dotnet_ubuntu_package: "dotnet-dev-1.1.4" }
+    - pablocrivella.nvm

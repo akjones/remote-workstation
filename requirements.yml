@@ -1,3 +1,4 @@
 ---
 - src: akjones.remote-desktop-role
 - src: ocha.dotnet-core
+- src: pablocrivella.nvm
