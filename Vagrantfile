@@ -6,5 +6,5 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell",
                       path: "go.sh",
-                      args: "/vagrant/workstation.yml"
+                      args: "/vagrant"
 end

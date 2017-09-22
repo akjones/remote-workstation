@@ -9,13 +9,19 @@ if [ ! $? -eq 0 ]; then
 fi;
 
 if  [ "$1" != "" ]; then
-    playbook=$1
+    prefix=$1
+    playbook="$1/workstation.yml"
+    requirements="$1/requirements.yml"
 else
-    playbook=workstation.sh
+    playbook=workstation.yml
+    requirements=requirements.yml
 fi
 
 if [ "${UBUNTU_PASSWORD}" != "" ]; then
     extra_vars="--extra-vars ubuntu_password=${UBUNTU_PASSWORD}"
 fi
 
+set -e
+
+ansible-galaxy install -r $requirements
 ansible-playbook -i "localhost," -c local $playbook $extra_vars

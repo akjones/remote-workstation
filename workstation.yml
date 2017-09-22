@@ -2,6 +2,6 @@
   roles:
     - base
     - python
-    - desktop
+    - akjones.remote-desktop-role
     - docker
     - aws
