@@ -2,3 +2,4 @@
 - src: akjones.remote-desktop-role
 - src: ocha.dotnet-core
 - src: pablocrivella.nvm
+- src: akjones.vscode-on-xrdp-role

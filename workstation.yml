@@ -7,3 +7,4 @@
     - aws
     - { role: ocha.dotnet-core, dotnet_ubuntu_package: "dotnet-dev-1.1.4" }
     - pablocrivella.nvm
+    - akjones.vscode-on-xrdp-role
