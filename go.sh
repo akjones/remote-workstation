@@ -23,5 +23,5 @@ fi
 
 set -e
 
-ansible-galaxy install -r $requirements
+ansible-galaxy install -f -r $requirements
 ansible-playbook -i "localhost," -c local $playbook $extra_vars
